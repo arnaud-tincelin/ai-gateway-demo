@@ -5,8 +5,8 @@
     "ghcr.io/devcontainers/features/python:1": { "version": "3.13", "installTools": true },
     "ghcr.io/devcontainers/features/terraform:1": {},
     "ghcr.io/devcontainers/features/azure-cli:1": {},
-    "ghcr.io/va-h/devcontainers-features/uv:1": { "shellautocompletion": true, "version": "latest" },
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers-extra/features/uv:1": { "version": "latest" }
   },
   "customizations": {
     "vscode": {
@@ -17,9 +17,7 @@
         "ms-vscode.azurecli",
         "ms-python.python",
 				"ms-python.vscode-pylance",
-				"GitHub.vscode-github-actions",
-				"GitHub.copilot",
-				"ms-azuretools.vscode-azure-github-copilot",
+				"GitHub.copilot"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -30,16 +28,8 @@
       }
     }
   },
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  },
-  "mounts": [
-    "source=terraform-plugin-cache,target=/home/vscode/.terraform.d/plugins,type=volume",
-    // "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
-  ],
   "postCreateCommand": "bash .devcontainer/postCreate.sh",
   "forwardPorts": [],
   "updateContentCommand": "echo 'Devcontainer ready (features-based).'",
-  "waitFor": "postCreateCommand",
-  // "initializeCommand": "bash .devcontainer/init.sh"
+  "waitFor": "postCreateCommand"
 }

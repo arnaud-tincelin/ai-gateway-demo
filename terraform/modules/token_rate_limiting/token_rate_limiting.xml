@@ -2,8 +2,7 @@
   <inbound>
     <base />
     <azure-openai-token-limit counter-key="@(context.Subscription.Id)"
-      tokens-per-minute="500" estimate-prompt-tokens="false" remaining-tokens-variable-name="remainingTokens">
-    </azure-openai-token-limit>
+      tokens-per-minute="500" estimate-prompt-tokens="false" />
   </inbound>
   <backend>
     <base />

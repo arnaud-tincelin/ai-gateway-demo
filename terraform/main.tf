@@ -1,6 +1,9 @@
 resource "azurerm_resource_group" "this" {
   name     = "poc-genai-gateway-${var.unique_name}"
   location = "sweden central"
+  lifecycle {
+    ignore_changes = [ tags ]
+  }
 }
 
 resource "azurerm_managed_redis" "this" {
